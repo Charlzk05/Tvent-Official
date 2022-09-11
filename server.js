@@ -27,8 +27,6 @@ app.get('/vent', function (req, res) {
     if (req.query.content == "") {
 
     }
-    
-    res.status(404);
 
     if (res.statusCode == 200) {
         res.render("submitted", { content: req.query.content, serverLog: "Status Code: 200 - The tweet was successful :D" });
