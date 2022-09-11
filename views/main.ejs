@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Twitter | Anonymous Vent - Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+<body>
+    <div style="margin-left: 10px; margin-right: 10px;">
+        <center>
+            <img src="/twitter.png" height="55px" width="55px" style="float: left; margin-left: 10px; margin-top: 5px; padding: 5px;">
+            <h3 style="font-weight: 500; margin-right: 15px; float: right;">Twitter - Anonymous Venting</h3>
+            <form action="http://localhost:8000/vent" method="get">
+                <div style="margin-top: 10px; border-radius: 5px; padding: 10px; background-color: #0C151C;">
+                    <div>
+                        <textarea name="content" style="height: 600px;" placeholder="Vent here ..."></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button type="submit" style="width: 260px;">Submit</button>
+                    <button id="GoToButton" style="width: 260px;">Go to twitter page</button>
+                </div>
+            </form>
+        </center>
+    </div>
+    <script>
+        const GoToButton = document.getElementById("GoToButton");
+
+        GoToButton.addEventListener("click", function() {
+            window.location.href = "";
+        });
+    </script>
+</body>
+</html>

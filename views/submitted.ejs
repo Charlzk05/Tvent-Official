@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Twitter | Anonymous Vent - Posted</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+<body>
+    <div style="margin-left: 10px; margin-right: 10px;">
+        <center>
+            <div style="margin-top: 10px; border-radius: 5px; padding: 10px; background-color: #0C151C;">
+                <img src="/twitter.png" height="55px" width="55px" style="float: left; margin-left: 10px; margin-top: 5px; padding: 5px;">
+                <h3 style="font-weight: 500; margin-right: 15px; float: right;">Your Anonymous Tweet</h3>
+                <textarea style="height: 400px; color: darkgray;" readonly><%- content %>
+
+
+- Anonymous
+                </textarea>
+            </div>
+            <div style="margin-top: 10px;">
+                <button style="width: 260px;" id="BackButton">Back</button>
+                <button style="width: 260px;" id="GoToButton">Go to tweet</button>
+            </div>
+            <div style="margin-top: 10px; border-radius: 5px; padding: 10px; background-color: #0C151C;">
+                <font>Server Response</font>
+                <div style="margin-top: 5px;">
+                    <textarea style="height: 200px; font-family: Consolas; color: darkgray; font-size: 14px;" readonly><%- serverLog %></textarea>
+                </div>
+            </div>
+        </center>
+    </div>
+    <script>
+        const BackButton = document.getElementById("BackButton");
+        const GoToButton = document.getElementById("GoToButton");
+
+        BackButton.addEventListener("click", function() {
+            window.location.href = "http://localhost:8000/";
+        });
+
+        GoToButton.addEventListener("click", function() {
+            window.location.href = "";
+        });
+    </script>
+</body>
+</html>
