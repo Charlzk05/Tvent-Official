@@ -1,6 +1,5 @@
 const { TwitterApi } = require("twitter-api-v2");
 const express = require('express');
-const { readNextPartOf } = require("twitter-api-v2/dist/v1/media-helpers.v1");
 const app = express();
 require("dotenv").config();
 
@@ -33,7 +32,7 @@ app.get('/vent', function (req, res) {
 
     if (res.statusCode == 200) {
         res.render("submitted", { content: req.query.content, serverLog: "Status Code: 200 - The tweet was successful :D" });
-        // readWriteClient.v2.tweet(content);
+        readWriteClient.v2.tweet(content);
     } else {
         res.render("submitted", { content: req.query.content, serverLog: `Status Code: ${res.statusCode} - The tweet was not successful, Something went wrong ...` });
     }
