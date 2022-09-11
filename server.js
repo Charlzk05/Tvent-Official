@@ -21,7 +21,6 @@ app.get('/vent', function (req, res) {
         accessSecret: process.env.ACCESS_TOKEN_SECRET
     });
     const readWriteClient = client.readWrite;
-
     const content = `${req.query.content}\n\n- Anonymous`
 
     if (req.query.content == "") {
