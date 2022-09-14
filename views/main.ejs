@@ -12,7 +12,7 @@
         <center>
             <img src="/twitter.png" height="55px" width="55px" style="float: left; margin-left: 10px; margin-top: 5px; padding: 5px;">
             <h3 style="font-weight: 500; margin-right: 15px; float: right;">Twitter - Anonymous Venting</h3>
-            <form action="http://localhost:8000/vent" method="get">
+            <form action="https://tvent.charlzk.repl.co/vent" method="get">
                 <div style="margin-top: 10px; border-radius: 5px; padding: 10px; background-color: #0C151C;">
                     <div>
                         <textarea name="content" style="height: 600px;" placeholder="Vent here ..."></textarea>
@@ -23,24 +23,39 @@
                     <button id="GoToButton" style="width: 260px;">Go to twitter page</button>
                 </div>
             </form>
+            <div style="margin-top: 10px;">
+                <font style="color: #ff7369;" id="warningMsgBox">Textarea must be at least 12 characters in length</font>
+            </div>
+            <hr style="margin-top: 20px;">
+            <div style="margin-top: 20px;">
+                <button id="GoToSourceButton" style="width: 260px;">View Source Code</button>
+            </div>
         </center>
     </div>
-    <script>
-        const content = document.getElementsByName("content")[0];
-        const submitButton = document.getElementById("submitButton");
-        const GoToButton = document.getElementById("GoToButton");
+  <script>
+      const content = document.getElementsByName("content")[0];
+      const submitButton = document.getElementById("submitButton");
+      const GoToButton = document.getElementById("GoToButton");
+      const warningMsgBox = document.getElementById("warningMsgBox");
+      const GoToSourceButton = document.getElementById("GoToSourceButton");
+    
+      content.addEventListener("input", function(e) {
+          if (e.target.value.length > 12) {
+              submitButton.disabled = false;
+              warningMsgBox.style.visibility = "hidden";
+          } else {
+              submitButton.disabled = true;
+              warningMsgBox.style.visibility = "visible";
+          }
+      });
 
-        content.addEventListener("input", function(e) {
-            if (e.target.value.length > 10) {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = true;
-            }
-        });
+      GoToSourceButton.addEventListener("click", function() {
+          window.location.href = "";
+      });
 
-        GoToButton.addEventListener("click", function() {
-            window.location.href = "";
-        });
-    </script>
+      GoToButton.addEventListener("click", function() {
+          window.location.href = "https://twitter.com/AnonymousVent5";
+      });
+  </script>
 </body>
 </html>
